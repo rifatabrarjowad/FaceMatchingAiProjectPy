@@ -35,19 +35,20 @@
               ">
             Face Matching
           </h1>
+          <form method="POST">
+            {% csrf_token %}
+            <div class="col-md-6 m-auto">
 
-          <div class="col-md-6 m-auto">
-
-            <h3>Select Your First Image : <input type="file" /> </h3>
-            <img src="" alt="" srcset="">
-          </div>
-          <div class="col-md-6">
-            <div class="banner-img">
-              <h3>Select Your Second Image : <input type="file" /> </h3>
+              <h3>Select Your First Image : <input  src = '{{ input_image }}' name = 'inputImage' type="file" /> </h3>
               <img src="" alt="" srcset="">
             </div>
-          </div>
-          <a href="http://www.facebook.com/rifatabrarjowad" class="mb-5" style="
+            <div class="col-md-6">
+              <div class="banner-img">
+                <!-- <h3>Select Your Second Image : <input name="first" type="file" /> </h3> -->
+                <img src="" alt="" srcset="">
+              </div>
+            </div>
+            <button type="submit" class="mb-5" style="
                 color: white;
                 text-align: center;
                 font-size: 30px;  
@@ -59,10 +60,18 @@
                 margin:auto;
 
               ">
-            Try to Match
-          </a>
+              Try to Match
+            </button>
+          </form>
         </div>
+
+
       </div>
+      </div>
+      <div>
+        <img src="{{firstImg}}" alt="" srcset="">
+        <img src="{{secondImg}}" alt="" srcset="">
+        <!-- <input src = '{{ input_image }}' name = 'inputImage' type="file"> -->
       </div>
     </section>
 
@@ -73,6 +82,7 @@
         style="color:red !important">Rifat Abrar
         Jowad</a>
     </div>
+
   </footer>
 
   <!-- js files -->

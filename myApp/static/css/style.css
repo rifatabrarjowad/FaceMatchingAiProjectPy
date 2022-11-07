@@ -1,0 +1,33 @@
+/* Poppins fonts */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+/* Roboto fonts */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+/* css for all */
+
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+body {
+  background-image: url("../img/bg.jpg") !important; /* The image used */
+
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  background-position: center;
+  width: 100% !important;
+  height: 100vh !important;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  margin-top: 30px;
+}
+footer {
+  width: 100%;
+  margin-top: -100px !important;
+}

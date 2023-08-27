@@ -35,23 +35,27 @@
               ">
             Face Matching
           </h1>
-          <form method="POST">
+          <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            <div class="col-md-6 m-auto">
+            <!-- ... (your existing HTML code) ... -->
+            <div class="image-preview">
+              <h3>Select Your First Image:</h3>
+              <input id="firstImgInput" name="firstImg" type="file" onchange="previewImage('firstImgPreview', this)" />
+              <img id="firstImgPreview"  />
+            </div>
 
-              <h3>Select Your First Image : <input  src = '{{ input_image }}' name = 'inputImage' type="file" /> </h3>
-              <img src="" alt="" srcset="">
+            <div class="image-preview">
+              <h3>Select Your Second Image:</h3>
+              <input id="secondImgInput" name="secondImg" type="file" onchange="previewImage('secondImgPreview', this)" />
+              <img id="secondImgPreview" src=""  />
             </div>
-            <div class="col-md-6">
-              <div class="banner-img">
-                <!-- <h3>Select Your Second Image : <input name="first" type="file" /> </h3> -->
-                <img src="" alt="" srcset="">
-              </div>
-            </div>
+
+            <!-- ... (your existing HTML code) ... -->
+
             <button type="submit" class="mb-5" style="
                 color: white;
                 text-align: center;
-                font-size: 30px;  
+                font-size: 30px;
                 font-weight: bold;
                 text-decoration: underline;
                 text-decoration-color: #ff8206;
@@ -62,16 +66,9 @@
               ">
               Try to Match
             </button>
-          </form>
         </div>
 
-
       </div>
-      </div>
-      <div>
-        <img src="{{firstImg}}" alt="" srcset="">
-        <img src="{{secondImg}}" alt="" srcset="">
-        <!-- <input src = '{{ input_image }}' name = 'inputImage' type="file"> -->
       </div>
     </section>
 
@@ -82,7 +79,6 @@
         style="color:red !important">Rifat Abrar
         Jowad</a>
     </div>
-
   </footer>
 
   <!-- js files -->

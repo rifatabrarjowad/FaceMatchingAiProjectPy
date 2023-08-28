@@ -35,19 +35,20 @@
               ">
             Face Matching
           </h1>
-          <form method="post" enctype="multipart/form-data">
+          <div class="col-md-8" >
+           <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <!-- ... (your existing HTML code) ... -->
             <div class="image-preview">
               <h3>Select Your First Image:</h3>
-              <input id="firstImgInput" name="firstImg" type="file" onchange="previewImage('firstImgPreview', this)" />
-              <img id="firstImgPreview"  />
+              <input id="firstImgInput" required name="firstImg" type="file" onchange="previewImage('firstImgPreview', this)" />
+              <img id="firstImgPreview" width="150" height="200"  src="{% static 'img/placeholder.jpeg' %}" alt="First Image" />
             </div>
 
             <div class="image-preview">
               <h3>Select Your Second Image:</h3>
-              <input id="secondImgInput" name="secondImg" type="file" onchange="previewImage('secondImgPreview', this)" />
-              <img id="secondImgPreview" src=""  />
+              <input id="secondImgInput" required name="secondImg" type="file" onchange="previewImage('secondImgPreview', this)" />
+              <img id="secondImgPreview" width="150" height="200"  src="{% static 'img/placeholder.jpeg' %}" alt="Second Image" />
             </div>
 
             <!-- ... (your existing HTML code) ... -->
@@ -66,6 +67,22 @@
               ">
               Try to Match
             </button>
+          </form>
+          </div>
+          <div class="col-md-4" >
+            <div class="result-section">
+              {% if match_results is not None %}
+                <h2>Matching Results:</h2>
+                {% if match_results.0 %}
+                  <p>The faces match!</p>
+                {% else %}
+                  <p>The faces do not match.</p>
+                {% endif %}
+                <p>Face Distance: {{ face_distance }}</p>
+              {% endif %}
+            </div>
+          </div>
+
         </div>
 
       </div>

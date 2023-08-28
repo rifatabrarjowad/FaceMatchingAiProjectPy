@@ -33,9 +33,10 @@ def home(request):
         Results = face_recognition.compare_faces([encodeElong], encodeElongTest)
         faceDis = face_recognition.face_distance([encodeElong], encodeElongTest)
         print(Results, faceDis)
+        results = {
+            'match_results': Results,
+            'face_distance': faceDis,
+        }
+        return render(request, "index.html", context=results)
 
-
-        return render(request, "index.html")
-
-    ## do something with the images
     return render(request, 'index.html')
